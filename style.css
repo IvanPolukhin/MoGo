@@ -511,11 +511,14 @@ hr {
 }
 
 .reviews__item {
-    padding-left: 205px;
+    padding-left: 235px;
     position: relative;
 }
 
 .reviews__foto {
+    border: 2px solid #95e1d3;
+    border-radius: 50%;
+
     position: absolute;
     top: 0;
     left: 0;
@@ -693,4 +696,66 @@ hr {
 .logos {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+/* works*/
+
+.works {
+    display: flex;
+}
+
+.works__col {
+    flex: 1 1 0;
+}
+
+.works__item {
+    position: relative;
+    background: linear-gradient(to bottom,
+    #f38181, #fce38a);
+    transition: transform .2s;
+}    
+
+.works__img {
+    width: 100%;
+    display: block;
+    transition: opacity .2s linear;
+}
+
+.works__item:hover .works__img {
+    opacity: .1;
+}
+
+.works__item:hover .works__info {
+    opacity: 1;
+}
+
+.works__info {
+    padding: 0 15px;
+    opacity: 0;
+
+    text-align: center;
+    color: #fff;
+
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+
+    transform: translate3d(0, -50%, 0);
+    transition: opacity .2s linear;
+}
+
+.works__title {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.works__text {
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
 }
