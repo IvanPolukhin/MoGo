@@ -19,11 +19,12 @@ h1, h2, h3, h4, h5, h6 {
 
 hr {
     display: block;
-    width: 100%;
-    margin: 40px 0 40px 0 ;
+    width: 95%;
+    margin: 40px auto ;
     border: 0;
-    color: #e5e5e5 ;
+    color: #ccc;
     height: 1px;
+    
 }
 
 
@@ -354,6 +355,7 @@ hr {
 
 .stat {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .stat__item {
@@ -387,13 +389,13 @@ hr {
 
 .services {
     display: flex;
+    margin: auto 40px;
 }
 
 .services__item {
-     
-    flex: 1 1 0;
-    padding-left: 90px;
     padding-right: 20px;  
+    padding-left: 90px;
+    flex: 1 1 0;
     position: relative;
 }
 
@@ -427,6 +429,8 @@ hr {
 
 .devices__item {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .devices__item--iphone {
@@ -440,10 +444,18 @@ hr {
 
 .wedo {
     display: flex;
+    margin: 0 -15px;
+    flex-wrap: wrap;
+}
+
+.wedo__img {
+    display: block;
+    max-width: 100%;
 }
 
 .wedo__item {
     width: 50%;
+    padding: 0 15px;
 }
 
 /* accordion */
@@ -632,7 +644,7 @@ hr {
 /* card*/
 
 .card {
-    margin-top: 80px;
+    margin: 80px -15px;
     display: flex;
     justify-content: space-between;
 }
@@ -643,7 +655,8 @@ hr {
 }
 
 .card__item {
-    
+    width: 33,33333%;
+    padding: 0 15px;
 }
 
 .card__item:hover .card__img {
@@ -663,6 +676,8 @@ hr {
 .card__img img {
     display: block;
     transition: opacity .1s linear;
+    min-width: 100%;
+    height: auto;
 }
 
 .card__text {
@@ -1176,6 +1191,24 @@ hr {
 }
 
 @media (max-width: 990px) {
+    /*stat*/
+    .stat {
+        justify-content: center;
+    }
+
+    .stat__item {
+        flex: none;
+        padding-bottom: 30px;
+        padding-top: 30px;
+        width: 33%;
+
+        border: 0;
+    }
+
+    .stat__item:last-child {
+        border-right: 0;
+    }
+
     /*intro*/
     .intro__suptitle {
         font-size: 32px;
@@ -1187,17 +1220,61 @@ hr {
 }
 
 @media (max-width: 770px) {
+    
+    /*nav*/
     .nav {
         display: none;
     }
 
+    /*section*/
+    .section {
+        padding: 40px 0;
+    }
+
+    .section--devices {
+        padding-bottom: 0;
+    }
+
+    /*card*/
+    .card {
+        justify-content: center;
+    }
+
+    .card__item {
+        margin-top: 50px;
+        width: 100%;
+        max-width: 410px;
+        margin-bottom: 30px;
+    }
+
+    .card__item:last-child {
+        margin-bottom: 0;
+    }
+
+    /*slider*/
     .slider__text {
         display: none;
+    }
+
+    .slider__item.active::before {
+        width: 50%;
+    }
+
+    /*wedo*/
+    .wedo__img {
+        display: none;
+    }
+
+    .wedo__item {
+        width: 100%;
     }
 }
 
 @media (max-width: 575px) {
     /*intro*/
+    .section__header {
+        margin-bottom: 50px;
+    }
     .intro__suptitle {
         font-size: 22px;
     }
@@ -1205,5 +1282,43 @@ hr {
     .intro__title {
         font-size: 40px;
     }
+
+    /*section*/
+    .section__title {
+        font-size: 24px;
+    }
+    .section__suptitle {
+        font-size: 20px;
+    }
+
+    .section__title::after {
+        margin: 20px auto;
+    }
+
+    /*stat*/
+    .stat__item {
+        width: 100%;
+        border-bottom: 1px solid #b5eae0;
+    }
+
+    .stat__item:last-child {
+        border-bottom: 0;
+    }
+
+    .stat__count {
+        font-size: 52px;
+    }
+
+    /*devices*/
+    .devices {
+        max-width: 320px;
+    }
+
+    .devices__item--iphone {
+        width: 180px;
+        bottom: -50px;
+        right: -80px;
+    }
 }
+
 
